@@ -160,5 +160,43 @@ body > main > section > section:first-of-type > #add-btn {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
+body > main > section > section:last-of-type > table {
+  margin-top: 4rem;
+  width: 100%;
+}
+body > main > section > section:last-of-type > table > thead > tr {
+  font-weight: 500;
+  font-size: 1.3rem;
+  line-height: 4rem;
+  text-align: left;
+}
+body > main > section > section:last-of-type > table > tbody > tr {
+  font-size: 1.2rem;
+  line-height: 2.5rem;
+}
+body > main > section > section:last-of-type > table > tbody > tr:not(:last-of-type) {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:nth-of-type(4) {
+  font-size: 1.5rem;
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:last-of-type {
+  font-size: 1.4rem;
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a:last-of-type {
+  color: var(--darkCornFlowerBlue);
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a > span.bi-eye::before {
+  content: "\f341";
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a > span.bi-pen::before {
+  content: "\f4c8";
+}
+body > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > button {
+  background: none;
+  color: #b50604;
+  border: none;
+  font-size: 1.5rem;
+}
 
 /*# sourceMappingURL=style.css.map */

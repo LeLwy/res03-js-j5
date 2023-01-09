@@ -115,6 +115,80 @@ body {
                         cursor: pointer;
                     }
                 }
+                
+                &:last-of-type{
+                    
+                    &>table{
+                        
+                        margin-top: 4rem;
+                        width: 100%;
+                        
+                        &>thead{
+                            
+                            &>tr{
+                                
+                                font-weight: 500;
+                                font-size: 1.3rem;
+                                line-height: 4rem;
+                                text-align: left;
+                            }
+                        }
+                        
+                        &>tbody{
+                            
+                            &>tr{
+                                
+                                font-size: 1.2rem;
+                                line-height: 2.5rem;
+                                
+                                &:not(:last-of-type){
+                                    
+                                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                                }
+                                
+                                &>td{
+                                    
+                                    &:nth-of-type(4){
+                                        
+                                        font-size: 1.5rem;
+                                    }
+                                    
+                                    &:last-of-type{
+                                        
+                                        font-size: 1.4rem;
+                                        
+                                        &>a{
+                                        
+                                            &:last-of-type{
+                                        
+                                                color: var(--darkCornFlowerBlue);
+                                            }
+                                            
+                                            &>span{
+                                                
+                                                &.bi-eye::before {
+                                                    content: "\f341";
+                                                }
+                                                
+                                                &.bi-pen::before {
+                                                    content: "\f4c8";
+                                                }
+                                            }
+                                        }
+                                        
+                                        &>button{
+                                            
+                                            background: none;
+                                            color: #b50604;
+                                            border: none;
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
