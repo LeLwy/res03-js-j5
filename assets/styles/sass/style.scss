@@ -15,10 +15,24 @@ body {
         
         &>section{
             
-            border-right: 1px solid var(--black);
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: 0.2fr 0.2fr 0.6fr;
             padding: 0.5rem;
+            border-right: none;
+            border-bottom: 1px solid black;
+            
+            &>button{
+                
+                font-size: 3rem;
+                background: none;
+                border: none;
+                cursor: pointer;
+            }
+            
+            &>figure{
+                
+                grid-column: 3 / 4;
+            }
         }
         
         &>nav{
@@ -74,6 +88,34 @@ body {
         &>section{
 
             grid-column: 2 / 3;
+            padding: 2rem;
+            
+            &>h2{
+
+                font-size: 2rem;
+                text-transform: uppercase;
+                color: #0077b6;
+                font-weight: 700;
+                margin-bottom: 4rem;
+            }
+            
+            &>section{
+                
+                &:first-of-type{
+                    
+                    &>#add-btn{
+                        
+                        background-color: #023E8A;
+                        color: white;
+                        padding: 0.7rem 1.2rem;
+                        font-size: 1.2rem;
+                        border: none;
+                        border-radius: 0.2rem;
+                        box-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
+                        cursor: pointer;
+                    }
+                }
+            }
         }
     }
 }

@@ -3,16 +3,31 @@ function showMenu(){
     let menuNameList = document.querySelectorAll("body > main > aside > nav > h2");
     let menuList = document.querySelectorAll("body > main > aside > nav > ul");
     
-    for(let i=0; i>menuNameList.length; i++){
+    for(let i=0; i<menuNameList.length; i++){
         
-        menuNameList[0].addEventListener("click", function(){
+        menuNameList[i].addEventListener("click", function(){
             
-            menuList[0].classList.toggle("d-none");
+            menuList[i].classList.toggle("d-none");
         })
     }
+}
+
+function showAside(){
+    
+    let showAsideBtn = document.getElementById("show-aside-btn");
+    let menuListAside = document.getElementById("menu-list-aside");
+    let headerLogoSection = document.getElementById("header-logo-section");
+    
+    showAsideBtn.addEventListener("click", function(){
+        
+        menuListAside.classList.toggle("d-none");
+        headerLogoSection.classList.toggle("open");
+    })
 }
 
 window.addEventListener("DOMContentLoaded", function(){
     
     showMenu();
+    showAside();
 })
+    

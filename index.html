@@ -7,12 +7,13 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
         <link rel="stylesheet" href="assets/styles/css/style.css" type="text/css" />
-        <title>Dropdown Button</title>
+        <title>Interface Admin</title>
     </head>
     <body>
         <header>
             <h1 class="d-none">Interface administrateur</h1>
-            <section>
+            <section id="header-logo-section" class="open">
+                <button id="show-aside-btn"><span class="bi-chevron-bar-left"></span></button>
                 <figure>
                     <img src="https://res03.sites.3wa.io/assets/files/js/j5/demo/assets/logo.svg" alt="Le logo du site, une explosion du pointillés bleus">
                     <figcaption class="d-none">
@@ -25,7 +26,7 @@
             </nav>
         </header>
         <main>
-            <aside>
+            <aside id="menu-list-aside">
                 <nav>
                     <h2>utilisateurs<span aria-hidden="true" class="bi-caret-down"></span></h2>
                     <ul class="d-none">
@@ -51,7 +52,14 @@
                 </nav>
             </aside>
             <section>
-                
+                <h2>Liste des utilisateurs</h2>
+                <section>
+                    <h3 class="d-none">Ajouter un utilisateur</h3>
+                    <button id="add-btn"><span class="bi-person-fill-add"></span>Ajouter un utilisateur</button>
+                </section>
+                <section>
+                    <h3 class="d-none">Liste des utilisateurs</h3>
+                </section>
             </section>
         </main>
         <footer></footer>
