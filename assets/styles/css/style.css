@@ -81,6 +81,12 @@ html {
   border-bottom: none;
 }
 
+body {
+  display: grid;
+  grid-template-rows: 0.1fr 0.9fr;
+  width: 100vw;
+  height: 100vh;
+}
 body > header {
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
@@ -104,57 +110,50 @@ body > header > section > figure {
 body > header > nav {
   border-bottom: 1px solid var(--black);
 }
-
-body#homepage {
-  display: grid;
-  grid-template-rows: 0.1fr 0.9fr;
-  width: 100vw;
-  height: 100vh;
-}
-body#homepage > main {
+body > main {
   display: grid;
   grid-template-columns: 0.25fr 0.75fr;
 }
-body#homepage > main > aside {
+body > main > aside {
   border-right: 1px solid var(--black);
   padding: 5rem 1rem;
 }
-body#homepage > main > aside > nav > h2 {
+body > main > aside > nav > h2 {
   font-size: 1.5rem;
   font-weight: 600;
   text-transform: uppercase;
   margin: 1rem 0;
   cursor: pointer;
 }
-body#homepage > main > aside > nav > ul {
+body > main > aside > nav > ul {
   display: grid;
   grid-template-columns: 1fr;
   font-size: 1.2rem;
   font-weight: 400;
   text-transform: uppercase;
 }
-body#homepage > main > aside > nav > ul > li {
+body > main > aside > nav > ul > li {
   margin: 0.5rem 0;
 }
-body#homepage > main > aside > nav > ul > li > a {
+body > main > aside > nav > ul > li > a {
   color: var(--black);
   text-decoration: none;
 }
-body#homepage > main > aside > nav > ul > li > a:hover {
+body > main > aside > nav > ul > li > a:hover {
   text-decoration: underline;
 }
-body#homepage > main > section {
+body > main > section {
   grid-column: 2/3;
   padding: 2rem;
 }
-body#homepage > main > section > h2 {
+body > main > section > h2 {
   font-size: 2rem;
   text-transform: uppercase;
   color: #0077b6;
   font-weight: 700;
   margin-bottom: 4rem;
 }
-body#homepage > main > section > section:first-of-type > #add-btn {
+body > main > section > section:first-of-type > #add-btn {
   background-color: #023E8A;
   color: white;
   padding: 0.7rem 1.2rem;
@@ -164,43 +163,95 @@ body#homepage > main > section > section:first-of-type > #add-btn {
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
   cursor: pointer;
 }
-body#homepage > main > section > section:last-of-type > table {
+body > main > section > section#users-data > table {
   margin-top: 4rem;
   width: 100%;
 }
-body#homepage > main > section > section:last-of-type > table > thead > tr {
+body > main > section > section#users-data > table > thead > tr {
   font-weight: 500;
   font-size: 1.3rem;
   line-height: 4rem;
   text-align: left;
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr {
+body > main > section > section#users-data > table > tbody > tr {
   font-size: 1.2rem;
   line-height: 2.5rem;
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr:not(:last-of-type) {
+body > main > section > section#users-data > table > tbody > tr:not(:last-of-type) {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:nth-of-type(4) {
+body > main > section > section#users-data > table > tbody > tr > td:nth-of-type(4) {
   font-size: 1.5rem;
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:last-of-type {
+body > main > section > section#users-data > table > tbody > tr > td:last-of-type {
   font-size: 1.4rem;
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a:last-of-type {
+body > main > section > section#users-data > table > tbody > tr > td:last-of-type > a:last-of-type {
   color: var(--darkCornFlowerBlue);
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a > span.bi-eye::before {
+body > main > section > section#users-data > table > tbody > tr > td:last-of-type > a > span.bi-eye::before {
   content: "\f341";
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > a > span.bi-pen::before {
+body > main > section > section#users-data > table > tbody > tr > td:last-of-type > a > span.bi-pen::before {
   content: "\f4c8";
 }
-body#homepage > main > section > section:last-of-type > table > tbody > tr > td:last-of-type > button {
+body > main > section > section#users-data > table > tbody > tr > td:last-of-type > button {
   background: none;
   color: #b50604;
   border: none;
   font-size: 1.5rem;
+}
+body > main > section#delete-modal {
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body > main > section#delete-modal.d-none {
+  display: none;
+}
+body > main > section#delete-modal > #confirm-delete {
+  height: 30%;
+  width: 50%;
+  background-color: white;
+  border-radius: 0.2rem;
+  padding: 2rem 1rem;
+  border: 2px solid #b50604;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+body > main > section#delete-modal > #confirm-delete > h3 {
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+body > main > section#delete-modal > #confirm-delete > h4 {
+  text-align: center;
+  font-size: 1.4rem;
+  margin-bottom: 4rem;
+}
+body > main > section#delete-modal > #confirm-delete > #modal-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body > main > section#delete-modal > #confirm-delete > #modal-btns > button {
+  font-size: 1.3rem;
+  padding: 1rem 2rem;
+  margin: 0 0.5rem;
+}
+body > main > section#delete-modal > #confirm-delete > #modal-btns > button#modal-cancel-btn {
+  background-color: transparent;
+  color: black;
+  border: 2px solid black;
+  border-radius: 0.3rem;
+}
+body > main > section#delete-modal > #confirm-delete > #modal-btns > button#modal-delete-btn {
+  background-color: #b50604;
+  color: white;
+  border: 2px solid #b50604;
+  border-radius: 0.3rem;
 }
 
 /*# sourceMappingURL=style.css.map */

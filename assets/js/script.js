@@ -27,7 +27,7 @@ function showAside(){
 
 function displayUsers(users){
     
-    let tableBody = document.querySelector("body > main > section > section:last-of-type > table > tbody");
+    let tableBody = document.querySelector("body > main > section > section#users-data > table > tbody");
     
     for(let i=0; i<users.length; i++){
         
@@ -79,14 +79,12 @@ function displayUsers(users){
         
         let delButton = document.createElement("button");
         let delSpan = document.createElement("span");
-        let delBtnId = delButton.id;
         delSpan.classList.add("bi-trash3");
         delSpan.setAttribute("aria-labelledby", "Supprimer l'utilisateur");
         delButton.appendChild(delSpan);
-        delButton.id = `del-user-btn-${users[i].id}`;
         delButton.setAttribute("data-user", users[i].id);
         
-        delUser();
+        delUser(delButton);
         
         tdAction.appendChild(viewLink);
         tdAction.appendChild(editLink);
@@ -102,11 +100,43 @@ function displayUsers(users){
     }
 }
 
-function delUser(delUserBtnId){
+function delUser(delButton){
     
-    delUserBtnId.addEventListener("click", function(){
+    delButton.addEventListener("click", function(){
         
+        let delButtonId = parseInt(delButton.getAttribute("data-user"));
+        let usersDataSection = document.getElementById("users-list");
+        let deleteModale = document.getElementById("delete-modal");
+        let confirmDeleteSection = document.getElementById("confirm-delete");
+        let delUserElement = document.querySelector("#confirm-delete > h4");
         
+        let delUserName = users[delButtonId].name;
+        delUserElement.innerHTML = delUserName;
+        let delUserElementId = delUserElement.id;
+        delUserElement.id = "deleted-user-name";
+        confirmDeleteSection.appendChild(delUserElement);
+        
+        usersDataSection.classList.add("d-none");
+        deleteModale.classList.remove("d-none");
+        
+        cancelDeleteModale();
+    })
+    
+}
+
+function cancelDeleteModale(){
+    
+    let cancelBtn = document.getElementById("modal-cancel-btn");
+    let usersDataSection = document.getElementById("users-list");
+    let deleteModale = document.getElementById("delete-modal");
+    let confirmDeleteSection = document.getElementById("confirm-delete");
+    
+    cancelBtn.addEventListener("click", function(){
+        
+        let delUserElement = document.getElementById("deleted-user-name");
+        
+        usersDataSection.classList.remove("d-none");
+        deleteModale.classList.add("d-none");
     })
 }
 
@@ -178,5 +208,7 @@ window.addEventListener("DOMContentLoaded", function(){
     showMenu();
     showAside();
     displayUsers(users);
+    
+    console.log(users);
 })
     

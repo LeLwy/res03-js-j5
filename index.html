@@ -51,13 +51,13 @@
                     </ul>
                 </nav>
             </aside>
-            <section>
+            <section id="users-list">
                 <h2>Liste des utilisateurs</h2>
                 <section>
                     <h3 class="d-none">Ajouter un utilisateur</h3>
                     <button id="add-btn"><span class="bi-person-fill-add"></span>Ajouter un utilisateur</button>
                 </section>
-                <section>
+                <section id="users-data">
                     <h3 class="d-none">Données des utilisateurs</h3>
                     <table>
                         <thead>
@@ -73,6 +73,18 @@
                             
                         </tbody>
                     </table>
+                </section>
+            </section>
+            <section id="delete-modal" class="d-none">
+                <h3 class="d-none">Fenêtre de confirmation</h3>
+                <section id="confirm-delete">
+                    <h3>Êtes-vous sûr-e de vouloir supprimer cet utilisateur ?</h3>
+                    <h4></h4>
+                    <section id="modal-btns">
+                        <h4 class="d-none">Confirmation de suppression</h4>
+                        <button id="modal-cancel-btn">Annuler</button>
+                        <button id="modal-delete-btn">Supprimer</button>
+                    </section>
                 </section>
             </section>
         </main>
