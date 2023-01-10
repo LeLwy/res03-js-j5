@@ -79,9 +79,14 @@ function displayUsers(users){
         
         let delButton = document.createElement("button");
         let delSpan = document.createElement("span");
+        let delBtnId = delButton.id;
         delSpan.classList.add("bi-trash3");
         delSpan.setAttribute("aria-labelledby", "Supprimer l'utilisateur");
         delButton.appendChild(delSpan);
+        delButton.id = `del-user-btn-${users[i].id}`;
+        delButton.setAttribute("data-user", users[i].id);
+        
+        delUser();
         
         tdAction.appendChild(viewLink);
         tdAction.appendChild(editLink);
@@ -95,6 +100,14 @@ function displayUsers(users){
         
         tableBody.appendChild(tr);
     }
+}
+
+function delUser(delUserBtnId){
+    
+    delUserBtnId.addEventListener("click", function(){
+        
+        
+    })
 }
 
 let users = [  

@@ -1,0 +1,162 @@
+body#homepage {
+    display: grid;
+    grid-template-rows: 0.1fr 0.9fr;
+    width: 100vw;
+    height: 100vh;
+    
+    &>main{
+        
+        display: grid;
+        grid-template-columns: 0.25fr 0.75fr;
+        
+        &>aside{
+            
+            border-right: 1px solid var(--black);
+            padding: 5rem 1rem;
+            
+            &>nav{
+                
+                &>h2{
+                    
+                    font-size: 1.5rem;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    margin: 1rem 0;
+                    cursor: pointer;
+                }
+                
+                &>ul{
+                    
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    text-transform: uppercase;
+                    
+                    &>li{
+
+                        margin: 0.5rem 0;
+                        
+                        &>a{
+                            
+                            color: var(--black);
+                            text-decoration: none;
+                            
+                            &:hover{
+                                
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        &>section{
+
+            grid-column: 2 / 3;
+            padding: 2rem;
+            
+            &>h2{
+
+                font-size: 2rem;
+                text-transform: uppercase;
+                color: #0077b6;
+                font-weight: 700;
+                margin-bottom: 4rem;
+            }
+            
+            &>section{
+                
+                &:first-of-type{
+                    
+                    &>#add-btn{
+                        
+                        background-color: #023E8A;
+                        color: white;
+                        padding: 0.7rem 1.2rem;
+                        font-size: 1.2rem;
+                        border: none;
+                        border-radius: 0.2rem;
+                        box-shadow: 2px 2px 3px rgb(0 0 0 / 20%);
+                        cursor: pointer;
+                    }
+                }
+                
+                &:last-of-type{
+                    
+                    &>table{
+                        
+                        margin-top: 4rem;
+                        width: 100%;
+                        
+                        &>thead{
+                            
+                            &>tr{
+                                
+                                font-weight: 500;
+                                font-size: 1.3rem;
+                                line-height: 4rem;
+                                text-align: left;
+                            }
+                        }
+                        
+                        &>tbody{
+                            
+                            &>tr{
+                                
+                                font-size: 1.2rem;
+                                line-height: 2.5rem;
+                                
+                                &:not(:last-of-type){
+                                    
+                                    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+                                }
+                                
+                                &>td{
+                                    
+                                    &:nth-of-type(4){
+                                        
+                                        font-size: 1.5rem;
+                                    }
+                                    
+                                    &:last-of-type{
+                                        
+                                        font-size: 1.4rem;
+                                        
+                                        &>a{
+                                        
+                                            &:last-of-type{
+                                        
+                                                color: var(--darkCornFlowerBlue);
+                                            }
+                                            
+                                            &>span{
+                                                
+                                                &.bi-eye::before {
+                                                    content: "\f341";
+                                                }
+                                                
+                                                &.bi-pen::before {
+                                                    content: "\f4c8";
+                                                }
+                                            }
+                                        }
+                                        
+                                        &>button{
+                                            
+                                            background: none;
+                                            color: #b50604;
+                                            border: none;
+                                            font-size: 1.5rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
